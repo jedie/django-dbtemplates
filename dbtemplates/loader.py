@@ -33,7 +33,7 @@ class Loader(BaseLoader):
         #   in the cache indicating that queries failed, with the current
         #   timestamp.
         site = Site.objects.get_current()
-        display_name = 'dbtemplates:%s:%s:%s' % (settings.DATABASE_ENGINE,
+        display_name = 'dbtemplates:%s:%s:%s' % (settings.DATABASES["default"]["ENGINE"],
                                                  template_name, site.domain)
         cache_key = get_cache_key(template_name)
         if cache:
